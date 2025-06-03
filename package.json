@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  },
+  "name": "dku_opensourcebasic_project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server/server.js",
+    "start": "node server/server.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/resetmerlin/DKU_OpenSourceBasic_Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/resetmerlin/DKU_OpenSourceBasic_Project/issues"
+  },
+  "homepage": "https://github.com/resetmerlin/DKU_OpenSourceBasic_Project#readme",
+  "description": ""
+}

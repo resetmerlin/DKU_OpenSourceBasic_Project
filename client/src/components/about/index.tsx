@@ -4,23 +4,33 @@ import { Subtitle, Title } from "../../shared/writing";
 import { Three } from "../home/three";
 import { Earth } from "../home/three/object/earth";
 import { Fog, Lights } from "../home/three/parts";
+import { useAbout } from "./useAbout";
 
 export function AboutPage() {
+  const { data, loading } = useAbout();
+
+  if (loading)
+    return (
+      <Layout>
+        <div className="p-10 text-white">Loading...</div>
+      </Layout>
+    );
+
   return (
     <Layout>
       <section className="flex h-full w-full px-10">
         <div
+          className="mt-1.5 h-full w-6/12 max-[500px]:hidden"
           id="project-left"
-          className={`mt-1.5 h-full w-6/12 max-[500px]:hidden`}
         >
           <div
-            className="relative flex justify-center rounded-full max-[500px]:translate-x-[-19rem] max-[500px]:translate-y-[6rem]	sm:translate-x-[-19rem] sm:translate-y-[6rem]	 md:translate-x-[-13rem] md:translate-y-[6rem] lg:translate-x-[-8rem] xl:translate-x-[-7rem] 2xl:translate-x-0  2xl:translate-y-0"
+            className="relative flex justify-center rounded-full max-[500px]:translate-x-[-19rem] max-[500px]:translate-y-[6rem] sm:translate-x-[-19rem] sm:translate-y-[6rem] md:translate-x-[-13rem] md:translate-y-[6rem] lg:translate-x-[-8rem] xl:translate-x-[-7rem] 2xl:translate-x-0 2xl:translate-y-0"
             id="earth-project"
           >
             <IntroNav
               page="ABOUT"
               id="about__title"
-              className="sm:translate-x-[-16rem] sm:translate-y-[-6rem] "
+              className="sm:translate-x-[-16rem] sm:translate-y-[-6rem]"
             />
             <div className="absolute" id="shadow" />
             <Three.Container>
@@ -33,25 +43,27 @@ export function AboutPage() {
             </Three.Container>
           </div>
         </div>
-        <div className={`mt-1.5 h-full w-6/12 max-[500px]:w-full`}>
+
+        <div className="mt-1.5 h-full w-6/12 max-[500px]:w-full">
           <section className="mt-1.5 h-full w-full snap-center" id="slider">
-            <div
-              className={`flex-col mt-1.5 flex h-full w-full 	items-center justify-evenly	overflow-hidden`}
-            >
+            <div className="flex-col mt-1.5 flex h-full w-full items-center justify-evenly overflow-hidden">
               <img
-                src="./profile.png"
+                src="./201855490.png"
                 alt="profile"
-                className="h-96	w-96 rounded-full border-8	border-neutral-700	 p-8"
+                className="h-96 w-96 rounded-full border-8 border-neutral-700 p-8"
                 id="about__profile"
               />
-              <div className="flex w-4/6 flex-col justify-center 	">
-                <Title className="sm:text-7xl	md:text-8xl">
-                  Hi my name is Blabla
+              <div className="flex w-4/6 flex-col justify-center">
+                <Title className="sm:text-7xl md:text-8xl">
+                  {data.heading}
                 </Title>
                 <Subtitle>
-                  I'm looking for a job related to frontend development.
-                  <br /> I also have an interest in learning methodology <br />{" "}
-                  so that I can improve my development skills.
+                  {data.paragraphs.map((line, i) => (
+                    <span key={i}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
                 </Subtitle>
               </div>
             </div>

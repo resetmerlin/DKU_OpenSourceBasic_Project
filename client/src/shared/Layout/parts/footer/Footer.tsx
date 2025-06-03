@@ -36,24 +36,6 @@ export default function Footer() {
         >
           <i className="bx bxl-linkedin-square" />
         </Link>
-        <Link
-          to="https://github.com"
-          className="mx-1.5 flex items-center text-2xl"
-          target="_blank"
-        >
-          <i className="bx bxl-github" />
-        </Link>
-        <Link
-          to="https://www.notion.com"
-          className="mx-1.5 flex items-center	text-2xl "
-          target="_blank"
-        >
-          <img
-            src="./notion-logo-white.png"
-            alt="notion-white"
-            className="h-5   "
-          />
-        </Link>
       </div>
     </footer>
   );
