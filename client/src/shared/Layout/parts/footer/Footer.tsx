@@ -26,12 +26,6 @@ export default function Footer() {
         >
           About me
         </Link>
-        <Link
-          to="/project"
-          className=" flex items-center	duration-100 ease-out hover:border-b-4 focus:border-b-4"
-        >
-          Project
-        </Link>
       </div>
 
       <div className="flex h-full w-40 justify-evenly text-center ">

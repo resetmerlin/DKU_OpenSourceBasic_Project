@@ -160,3 +160,29 @@ html {
 ::-webkit-scrollbar-corner {
   background: black;
 }
+#earth-project {
+  position: fixed;
+  left: -18%;
+  top: 16%;
+
+  width: 52rem;
+  height: 52rem;
+  z-index: 100;
+  background:
+    radial-gradient(closest-side, rgb(0, 0, 0) 98.5%, transparent 82% 100%),
+    conic-gradient(from 62deg, rgb(129, 129, 129) 14%, rgb(22, 22, 22) -2%);
+}
+
+#about__title {
+  top: 5%;
+  right: -50%;
+}
+#about__profile {
+  transition: all 0.3s ease-in;
+}
+#about__profile:hover {
+  -webkit-box-shadow: 0px 0px 92px 51px rgba(56, 56, 56, 0.76);
+  -moz-box-shadow: 0px 0px 92px 51px rgba(56, 56, 56, 0.76);
+  box-shadow: 0px 0px 92px 51px rgba(56, 56, 56, 0.76);
+  border-color: white;
+}
