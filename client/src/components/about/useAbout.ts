@@ -7,7 +7,7 @@ export function useAbout() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/about")
+      .get("/api/about")
       .then((res) => setData(res.data))
       .finally(() => setLoading(false));
   }, []);

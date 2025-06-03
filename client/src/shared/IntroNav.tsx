@@ -53,7 +53,7 @@ export function useProfile() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/profile")
+      .get("/api/profile")
       .then((res) => setProfile(res.data))
       .finally(() => setLoading(false));
   }, []);

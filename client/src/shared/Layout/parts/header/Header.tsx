@@ -33,7 +33,7 @@ export function useSocials() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/socials")
+      .get("/api/socials")
       .then((res) => setSocials(res.data.socials))
       .finally(() => setLoading(false));
   }, []);
